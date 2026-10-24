@@ -4,12 +4,13 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "concurrently \"node index.js\" \"node api.js\"",
     "api": "node api.js",
     "register": "node register-commands.js"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
+    "concurrently": "^10.0.6",
     "discord.js": "^14.27.0",
     "dotenv": "^16.6.1",
     "express": "^4.19.0"

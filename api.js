@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const Database = require('better-sqlite3');
 
-const { API_KEY, PORT = 3000, HOST = '127.0.0.1', DB_PATH = 'ideas.db' } = process.env;
-if (!API_KEY) throw new Error('API_KEY is missing. Add it to your .env file.');
+const { API_KEY, PORT = 10000, HOST = '0.0.0.0', DB_PATH = 'ideas.db' } = process.env;
 
 const db = new Database(DB_PATH);
 db.exec(`
