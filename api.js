@@ -26,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// список: ?category=...&q=...&limit=...
 app.get('/entries', (req, res) => {
   const { category, q } = req.query;
   const limit = Math.min(parseInt(req.query.limit, 10) || 20, 100);
